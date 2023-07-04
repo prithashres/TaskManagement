@@ -1,0 +1,99 @@
+.card {
+   
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logincontainer {
+    border-radius: 20px;
+    background-color: #f8b700;
+    padding: 20px;
+    width: 300px;
+    height:250px;
+    z-index: 1;
+    margin-top: -10%;
+    /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
+    box-shadow: rgba(255, 255, 255, 0.45) 0px 5px 15px;
+    color: #000000
+}
+
+#email,
+#password {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #CCCCCC;
+    border-radius: 20px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    /* border-top: none;
+    border-left: none;
+    border-right: none; */
+    border-bottom: 5 px solid black;
+    background-color: #ffffff;
+
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #000000;
+    color: #ffffff;
+    padding: 14px 20px;
+    margin: 8px 80px;
+    border: none;
+    border-radius: 4px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+input[type=submit]:hover {
+    background-color: #262020;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.color.ng-invalid.ng-touched {
+    border: red solid 2px !important;
+}
+
+.color.ng-valid.ng-touched {
+    border: #12FF12 solid 2px !important;
+}
+
+.color {
+    outline: none;
+}
+
+h2 {
+    color: #000000;
+}
+
+h4 {
+    color: #000000;
+}
+
+h1 {
+    background-color: rgb(0, 0, 0);
+    height: 8vh;
+    text-align: center;
+    color: #f8b700;
+ 
+}
+
+.background{
+    
+    position:absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width: 100%;
+    height:100%;
+    background-image: url(".//bg6.jpg");
+}

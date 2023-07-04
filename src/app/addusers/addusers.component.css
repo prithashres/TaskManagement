@@ -1,0 +1,75 @@
+input[type=text],
+[type=name],
+[type=address],
+[type=phonenumber] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: none;
+    box-sizing: border-box;
+
+}
+
+input[type=submit] {
+    width: 50%;
+    background-color: #f8b700;
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 60px;
+    border: none;
+    border-radius: none;
+
+}
+
+input[type=submit]:hover {
+    background-color: #ffe100;
+}
+
+.formSubmit {
+    border-radius: none;
+    background-color: #ffffff;
+    padding: 20px;
+    width: 250px;
+    margin: 10px auto;
+}
+
+
+#forms {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.formSubmit {
+    /* box-shadow: 0px 7px 29px 0px rgba(100, 100, 111, 0.2) ; */
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+h2 {
+    margin-top:50px ;
+    color: #000000;
+}
+
+p {
+    color: #000000;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+}
+
+.color.ng-invalid.ng-touched {
+    border: red solid 2px ;
+}
+
+.color.ng-valid.ng-touched {
+    border: #12FF12 solid 2px;
+}
+
+.color {
+    outline: none;
+}

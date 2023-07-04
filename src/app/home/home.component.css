@@ -1,4 +1,15 @@
-ul {
+.background{
+    
+  position:absolute;
+  left: 0px;
+  top: 0px;
+  z-index: -1;
+  width: 100%;
+  height:100%;
+  background-image: url(".//bg6.jpg");
+}
+
+/* ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -22,6 +33,4 @@ ul {
   li a:hover:not(.active) {
     background-color: #fcd308;
   }
-
-  
-  
+   */

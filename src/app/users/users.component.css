@@ -1,0 +1,55 @@
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    
+  }
+
+  #addusers {
+    padding: 10px 20px;
+    margin-top: 60px;
+    margin-right: 20px;
+    background-color: black;
+    color: #f8b700;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+  }
+  
+
+  #addusers:hover {
+    background-color: #93938c;
+  }
+
+  #users {
+    border-collapse: collapse;
+    width: 60%;
+    margin-left:20%;
+    margin-top: 2%;
+  }
+
+  #users th, #users td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  #users tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  #users th {
+    background-color: #f8b700;
+    color: black;
+  }
+
+  h1{
+    text-align: center;
+  }
+

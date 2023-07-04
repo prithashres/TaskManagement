@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+<h2 id="forms">Add Users Form</h2>
+<div class="formSubmit">
+
+    <p><b>Please fill the form below</b></p>
+    <form [formGroup]="formValidation" (ngSubmit)="addUsers()">
+
+        <label for="name">Name</label>
+        <input type="text" id="name" class="color" placeholder="Your name.." formControlName="name">
+        <span class="error"
+            *ngIf="formValidation.get('name')?.invalid && (formValidation.get('name')?.touched || formValidation.get('name')?.dirty || isSubmitted)">
+            <ng-container *ngIf="formValidation.get('name')?.hasError('required')"> Name required!</ng-container>
+            <ng-container *ngIf="formValidation.get('name')?.hasError('minlength')">Name must be at least 6
+                characters!</ng-container>
+            <ng-container *ngIf="formValidation.get('name')?.hasError('maxlength')">Name must be less than 15
+                characters!</ng-container>
+        </span>
+        <br>
+
+        <label for="address">Address</label>
+        <input type="text" id="address" class="color"  placeholder="Your address.." formControlName="address">
+        <span class="error"
+            *ngIf="formValidation.get('address')?.invalid && (formValidation.get('address')?.touched || formValidation.get('address')?.dirty || isSubmitted)">
+            <ng-container *ngIf="formValidation.get('name')?.hasError('required')">Address required!</ng-container>
+        </span>
+        <br>
+
+        <label for="phonenumber">Phone Number</label>
+        <input type="text" id="phonenumber"  class="color"  placeholder="Your Phone Number.." formControlName="phonenumber">
+        <span class="error"
+            *ngIf="formValidation.get('phonenumber')?.invalid && (formValidation.get('phonenumber')?.touched || formValidation.get('phonenumber')?.dirty || isSubmitted)">
+            <ng-container
+                *ngIf="formValidation.get('phonenumber')?.hasError('required')">Phone number is required</ng-container>
+            <ng-container
+                *ngIf="formValidation.get('phonenumber')?.hasError('invalidPhoneNumber') && !formValidation.get('phonenumber')?.hasError('required')">Enter
+                a valid phone number</ng-container>
+        </span>
+        <br>
+
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" value="male" formControlName="gender">
+        <label for="male">Male</label>
+        <input type="radio" id="female" value="female" formControlName="gender">
+        <label for="female">Female</label><br>
+        <span class="error"
+            *ngIf="formValidation.get('gender')?.invalid && (formValidation.get('address')?.touched || formValidation.get('address')?.dirty || isSubmitted)">
+            <ng-container *ngIf="formValidation.get('address')?.hasError('required')">Gender required!</ng-container>
+        </span>
+
+
+        <input type="submit" value="Add Users" id="btn">
+    </form>
+</div>
