@@ -10,6 +10,7 @@ import { FormService } from '../form.service';
 export class UsersComponent {
   formValue: any[] = [];
 
+
   constructor(private router: Router, private formservice: FormService) {
     this.formValue = this.formservice.getFormValue();
   }
@@ -18,8 +19,9 @@ export class UsersComponent {
     this.router.navigate(['/addusers']);
   }
 
-  editUser(){
-
+  editUser(uid: number){
+   this.router.navigate([`/edituser/${uid}`]);
+2
   }
 
   deleteUser(index: number) {

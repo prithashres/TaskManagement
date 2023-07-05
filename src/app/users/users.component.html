@@ -5,21 +5,28 @@
 <h1>Users Table</h1>
 <table id="users">
   <tr>
+    <th>U_Id</th>
     <th>Name</th>
     <th>Address</th>
+    <th>DOB</th>
+    <th>Email</th>
     <th>Phone Number</th>
     <th>Gender</th>
     <th>Action</th>
   </tr>
 
   <tr *ngFor="let user of formValue; let i = index">
+    <td>{{ user.uid }}</td>
     <td>{{ user.name }}</td>
     <td>{{ user.address }}</td>
+    <td>{{user.dob}}</td>
+    <td>{{user.email}}</td>
     <td>{{ user.phoneNumber }}</td>
     <td>{{ user.gender }}</td>
     <td>
-      <button (click)="editUser()">Edit</button>
-      <button (click)="deleteUser(i)">Delete</button>
+      <button class="editbtn" (click)="editUser(user.uid)">Edit</button>
+      <br><br>
+      <button class="deletebtn" (click)="deleteUser(i)">Delete</button>
     </td>
   </tr>
 

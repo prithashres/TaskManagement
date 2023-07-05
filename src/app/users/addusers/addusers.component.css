@@ -1,7 +1,8 @@
 input[type=text],
 [type=name],
 [type=address],
-[type=phonenumber] {
+[type=phonenumber],
+[type=email]{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -11,6 +12,31 @@ input[type=text],
     box-sizing: border-box;
 
 }
+
+input[type=number],
+[type=uid] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: none;
+    box-sizing: border-box;
+
+}
+
+input[type=date],
+[type=dob] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #000000;
+    border-radius: none;
+    box-sizing: border-box;
+
+}
+
 
 input[type=submit] {
     width: 50%;

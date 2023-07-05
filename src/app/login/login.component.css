@@ -12,7 +12,7 @@
     background-color: #f8b700;
     padding: 20px;
     width: 300px;
-    height:250px;
+    height:300px;
     z-index: 1;
     margin-top: -10%;
     /* box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px; */
@@ -43,7 +43,7 @@ input[type=submit] {
     background-color: #000000;
     color: #ffffff;
     padding: 14px 20px;
-    margin: 8px 80px;
+    margin: 20px 80px;
     border: none;
     border-radius: 4px;
     font-size: 20px;

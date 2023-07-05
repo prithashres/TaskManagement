@@ -26,11 +26,10 @@
                         required!</ng-container>
                     <ng-container *ngIf="loginValidation.get('password')?.hasError('pattern')">Password must contain at
                         least one
-                        digit, one uppercase letter,one special character and atleast 8 characters!</ng-container>
+                        digit,uppercase letter,special character and atleast 8 characters!</ng-container>
                 </span>
                 <br>
 
-                <hr>
                 <input type="submit" value="Login" id="btn">
             </form>
         </div>

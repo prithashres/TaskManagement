@@ -4,7 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class FormService {
-  formValue: any[] = [];
+  formValue: any[] = [
+    {uid: '1' ,name:'Pritha Shrestha',address:'Baneshwor',dob:'01/09/2000',email:'prithashrestha007@gmail.com', phoneNumber:'+977982346632' ,gender:'female'},
+    {uid: '2' ,name:'Riya Bazgain',address:'Bhaktapur',dob:'27/03/2002',email:'riyabzgn@gmail.com', phoneNumber:'+97794982346632' ,gender:'female'},
+    {uid: '3' ,name:'Sanil Manandhar',address:'Kritipur',dob:'01/15/2001',email:'sanilmndr@gmail.com', phoneNumber:'+977942346632' ,gender:'male'},
+  ];
+
 
   getFormValue() {
     return this.formValue;
@@ -12,5 +17,12 @@ export class FormService {
 
   addUser(user: any) {
     this.formValue.push(user);
+  }
+
+  updateUser(user:any){
+    const index= this.formValue.findIndex((u:any) => u.uid === user.uid);
+    if(index !== -1){
+      this.formValue[index]= user;
+    }
   }
 }
