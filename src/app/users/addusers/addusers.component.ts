@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, Validators, AbstractControl,FormArray,ValidatorFn } from '@angular/forms';
 import { FormService } from '../../form.service';
 import { Router } from '@angular/router';
 
@@ -25,7 +25,9 @@ export class AddusersComponent {
     name: ['', [Validators.required, Validators.minLength(6), Validators.maxLength(15)]],
     address: ['', Validators.required],
     dob: ['', Validators.required],
-    email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]],
+    email: this.fb.array([
+      this.fb.control('')
+    ]),
     phonenumber: ['', [Validators.required, phoneNumberValidator]],
     gender: ['', Validators.required]
   });
@@ -53,5 +55,21 @@ export class AddusersComponent {
     this.formservice.addUser(user);
 
     this.router.navigate(['/users']);
+  }
+
+  get emails(){
+    return this.formValidation.get('email') as unknown as FormArray;
+  }
+
+  addEmails(){
+    this.emails.push(this.fb.control(''));
+  }
+
+  deleteEmails(index:number): void{
+    this.emails.removeAt(index);
+  }
+  canDeleteEmail(): boolean {
+    const emailsArray = this.formValidation.get('email') as FormArray;
+    return emailsArray.length > 1;
   }
 }

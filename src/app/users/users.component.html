@@ -1,3 +1,8 @@
+
+<!-- <div>
+  <img class="background">
+</div> -->
+
 <app-navbar></app-navbar>
 <div class="container">
   <button id="addusers" (click)="addUser()">+ Add Users</button>
@@ -20,8 +25,10 @@
     <td>{{ user.name }}</td>
     <td>{{ user.address }}</td>
     <td>{{user.dob}}</td>
-    <td>{{user.email}}</td>
-    <td>{{ user.phoneNumber }}</td>
+    <td>
+      <span *ngFor="let email of user.email">{{email}}<br></span>
+    </td>
+    <td>{{ user.phonenumber }}</td>
     <td>{{ user.gender }}</td>
     <td>
       <button class="editbtn" (click)="editUser(user.uid)">Edit</button>

@@ -37,14 +37,24 @@
         </span>
         <br>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" class="color" placeholder="Your email..." formControlName="email">
-        <span class="error"
-            *ngIf="formValidation.get('email')?.invalid && (formValidation.get('email')?.touched || formValidation.get('email')?.dirty || isSubmitted)">
-            <ng-container *ngIf="formValidation.get('email')?.hasError('required')">Email is required!</ng-container>
-            <ng-container *ngIf="formValidation.get('email')?.hasError('pattern')">Invalid email format!</ng-container>
-        </span>
-        <br>
+        <div class="input" formArrayName="email">
+            <div class="addIdBtn">
+                <button type="button" (click)="addEmails()" class="addEmailsBtn">+ Email</button>
+            </div>
+            <div class="deleterow" *ngFor="let emailId of emails.controls; let i=index">
+              
+                <input class="inputF" type="text" [formControlName]='i' placeholder="Email {{i+1}}: xyz@abc.com">
+                <button type="button" (click)="deleteEmails(i)" [disabled]="!canDeleteEmail()" class="deleteEmailsBtn">- </button>
+            </div>
+            <br>
+
+            <span class="error" *ngFor="let i=index">
+                <ng-container *ngIf="(emails.controls[i]?.errors?.['required'] && (emails.controls[i]?.dirty || emails.controls[i]?.touched ||isSubmitted))">
+                    Field Required</ng-container>
+                <ng-container *ngIf="(formValidation.get('email')?.invalid && !(formValidation.get('email')?.errors?.['required']))">
+                </ng-container>
+            </span>
+        </div>
 
         <label for="phonenumber">Phone Number</label>
         <input type="text" id="phonenumber"  class="color"  placeholder="Your Phone Number.." formControlName="phonenumber">

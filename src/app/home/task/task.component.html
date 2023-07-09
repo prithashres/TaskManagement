@@ -1,2 +1,70 @@
 <app-navbar></app-navbar>
-<p>task works!</p>
+<div class="taskcard">
+  <h2>Create Task</h2>
+  <form id="createTaskForm" [formGroup]="taskValidation" (ngSubmit)="create()">
+    <label for="taskName">Task Name:</label>
+    <input type="text" id="taskName" required formControlName="taskName">
+    <span class="error"
+            *ngIf="taskValidation.get('taskName')?.invalid && (taskValidation.get('taskName')?.touched || taskValidation.get('taskName')?.dirty || isSubmitted)">
+            <ng-container *ngIf="taskValidation.get('taskName')?.hasError('required')"> Task Name required!</ng-container>
+            <ng-container *ngIf="taskValidation.get('taskName')?.hasError('maxlength')">Task Name must be less than 20
+                characters!</ng-container>
+        </span>
+    <br>
+
+    <label for="taskDescription">Description:</label>
+    <textarea id="taskDescription" formControlName="taskDescription"></textarea>
+    <span class="error"
+    *ngIf="taskValidation.get('taskDescription')?.invalid && (taskValidation.get('taskDescription')?.touched || taskValidation.get('taskDescription')?.dirty || isSubmitted)">
+    <ng-container *ngIf="taskValidation.get('taskDescription')?.hasError('required')">Task Description required!</ng-container>
+    </span>
+    <br>
+
+    <label for="taskPriority">Priority:</label>
+    <select id="taskPriority" formControlName="taskPriority">
+      <option value="low">Low</option>
+      <option value="medium">Medium</option>
+      <option value="high">High</option>
+    </select>
+    <span class="error"
+    *ngIf="taskValidation.get('taskPriority')?.invalid && (taskValidation.get('taskPriority')?.touched || taskValidation.get('taskPriority')?.dirty || isSubmitted)">
+    <ng-container *ngIf="taskValidation.get('taskPriority')?.hasError('required')">Task Priority required!</ng-container></span>
+    <br>
+
+    <label for="dueDate">Due Date:</label>
+    <input type="date" id="dueDate" required formControlName="dueDate">
+    <span class="error"
+    *ngIf="taskValidation.get('dueDate')?.invalid && (taskValidation.get('dueDate')?.touched || taskValidation.get('dueDate')?.dirty || isSubmitted)">
+    <ng-container *ngIf="taskValidation.get('dueDate')?.hasError('required')">Due date required!</ng-container></span>
+    <br>
+
+    <label for="subTask">Have Subtask?</label>
+    <input type="radio" id="subTaskYes" name="subTask" value="yes">
+    <label for="subTaskYes">Yes</label>
+    <input type="radio" id="subTaskNo" name="subTask" value="no" checked>
+    <label for="subTaskNo">No</label>
+    <span class="error"
+    *ngIf="taskValidation.get('subTask')?.invalid && (taskValidation.get('subTask')?.touched || taskValidation.get('subTask')?.dirty || isSubmitted)">
+    <ng-container *ngIf="taskValidation.get('subTask')?.hasError('required')">Select one option!</ng-container></span>
+    <br>
+
+    <div id="subTaskFields" >
+      <h3>Subtask:</h3>
+      <div id="subTaskContainer"></div>
+      <button type="button" id="addSubTaskButton">Add Subtask</button>
+      <br>
+    </div>
+
+    <label for="assignee">Assignee:</label>
+    <select id="assignee"></select>
+    <span class="error"
+    *ngIf="taskValidation.get('assignee')?.invalid && (taskValidation.get('assignee')?.touched || taskValidation.get('assignee')?.dirty || isSubmitted)">
+    <ng-container *ngIf="taskValidation.get('assignee')?.hasError('required')">Assignee required!</ng-container></span>
+    <br>
+
+    <button type="submit">Create</button>
+  </form>
+</div>
+
+
+
